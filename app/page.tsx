@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Clock3, ShieldCheck, UserRound, Gem, Headphones, MessageCircle, MapPinned, Luggage, Palmtree, Search, BadgeAlert, WalletCards, CircleHelp, Menu, Timer } from "lucide-react";
+import FAQAccordion from "./components/FAQAccordion";
 
 export const metadata: Metadata = { title: "Paulina Salazar | Tu Travel Partner en México", description: "Soy Paulina, tu Travel Partner y compañera de viaje. Te acompaño a planear tu viaje a Riviera Maya, Cancún y más, sin estrés ni miedo a equivocarte." };
 const WA="https://wa.me/529983921530?text=Hola%2C%20quiero%20planear%20un%20viaje%20personalizado";
@@ -28,6 +29,7 @@ export default function Home(){return <main>
   <section className="process" id="proceso"><p className="eyebrow">ASÍ TRABAJO CONTIGO</p><h2>Tu viaje en 4 simples pasos</h2><div className="rule"/><div className="stepGrid">{steps.map(([Icon,t,d])=><article key={t}><div className="iconBubble"><Icon/></div><h3>{t}</h3><p>{d}</p></article>)}</div></section>
   <section className="destinations" id="destinos"><p className="eyebrow">MI ESPECIALIDAD</p><h2>Riviera Maya y destinos de playa — y a donde tú sueñes</h2><div className="placeGrid">{places.map(([t,d,img])=><article key={t}><img src={img} alt={t}/><h3>{t}</h3><p>{d}</p></article>)}</div></section>
   <section className="testimonials" id="testimonios"><p className="eyebrow">LO QUE DICEN MIS VIAJEROS</p><h2>Historias reales, experiencias inolvidables</h2><div className="reviewGrid">{reviews.map(([q,n,img])=><article key={n}><div className="quote">“</div><p>“{q}”</p><div className="stars">★★★★★</div><strong>— {n}</strong><img src={img} alt={`Cliente ${n}`}/></article>)}</div></section>
-  <footer id="faq"><div><p className="eyebrow light">TU PRÓXIMA HISTORIA COMIENZA AQUÍ</p><h2>Cuéntame tu viaje<br/>y hagámoslo realidad.</h2><p>Estoy lista para ayudarte a vivir tu mejor experiencia.</p></div><div><a className="wa" href={WA}><MessageCircle/>Escríbeme por WhatsApp</a><small>Respuesta rápida y atención personalizada</small><p>hola@travelpartner.com · +52 998 392 1530</p></div></footer>
+  <FAQAccordion/>
+  <footer><div><p className="eyebrow light">TU PRÓXIMA HISTORIA COMIENZA AQUÍ</p><h2>Cuéntame tu viaje<br/>y hagámoslo realidad.</h2><p>Estoy lista para ayudarte a vivir tu mejor experiencia.</p></div><div><a className="wa" href={WA}><MessageCircle/>Escríbeme por WhatsApp</a><small>Respuesta rápida y atención personalizada</small><p>hola@travelpartner.com · +52 998 392 1530</p></div></footer>
   <a className="floating" href={WA} aria-label="Abrir WhatsApp"><MessageCircle/></a>
  </main>}
