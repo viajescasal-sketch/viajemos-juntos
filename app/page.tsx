@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Clock3, ShieldCheck, UserRound, Gem, Headphones, MessageCircle, MapPinned, Luggage, Palmtree, Search, BadgeAlert, WalletCards, CircleHelp, Menu, Timer } from "lucide-react";
+import { Clock3, ShieldCheck, UserRound, Gem, Headphones, MessageCircle, MapPinned, Luggage, Palmtree, Search, BadgeAlert, WalletCards, CircleHelp, Menu, Timer, Facebook, Instagram, Youtube } from "lucide-react";
 import FAQAccordion from "./components/FAQAccordion";
 
 export const metadata: Metadata = { title: "Paulina Salazar | Tu Travel Partner en México", description: "Soy Paulina, tu Travel Partner y compañera de viaje. Te acompaño a planear tu viaje a Riviera Maya, Cancún y más, sin estrés ni miedo a equivocarte." };
@@ -21,6 +21,13 @@ const reviews=[
  ["Nuestro viaje de luna de miel fue un sueño. Cada detalle pensado para nosotros. ¡Superó todas nuestras expectativas!","Carlos & Andrea","https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=160&q=80"],
  ["Me ahorró horas de investigación y dinero. Siempre estuvo disponible y nos acompañó durante todo el viaje.","Jorge R.","https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=80"]
 ];
+function TikTokIcon(){return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 3v10.5a4.5 4.5 0 1 1-4.5-4.5"/><path d="M15 3c.8 2.4 2.6 4 5 4.5"/></svg>;}
+const socials=[
+  [Facebook,"Facebook","https://www.facebook.com/share/1GjFtGYqvk/"],
+  [TikTokIcon,"TikTok","https://www.tiktok.com/@viajes_bumeran_casal?_r=1&_t=ZS-97tnwvvVyF8"],
+  [Instagram,"Instagram","https://www.instagram.com/viaja.pau?igsh=bWZzeGphM2JveHV0&utm_source=qr"],
+  [Youtube,"YouTube","https://youtube.com/@inspirateaviajar?si=x4N2enDjoUBr3QF_"]
+] as const;
 export default function Home(){return <main>
   <header className="hero" id="inicio"><nav><a className="brand" href="#inicio">TRAVEL<br/>PARTNER<span>PAULINA SALAZAR</span></a><div className="links"><a href="#inicio">Inicio</a><a href="#sobre-mi">Sobre mí</a><a href="#proceso">Servicios</a><a href="#destinos">Destinos</a><a href="#testimonios">Testimonios</a><a href="#faq">FAQ</a></div><a className="wa small" href={WA}><MessageCircle/>Hablemos por WhatsApp</a><Menu className="menu"/></nav>
   <div className="heroCopy"><p className="eyebrow light">TU TRAVEL PARTNER · LA COMPAÑERA DE VIAJE QUE PLANEA TODO POR TI</p><h1>Yo me encargo<br/>de todo, tú solo<br/>disfrutas.</h1><p>Soy Paulina Salazar, tu Travel Partner: la compañera de viaje que te<br/>acompaña desde el primer mensaje hasta que regresas a casa. Especialista<br/>en Riviera Maya y Cancún — y si sueñas con otro destino, también te ayudo<br/>a planearlo, sin que tengas que preocuparte por caer en una estafa o perder tu dinero.</p><a className="wa" href={WA}><MessageCircle/>Cuéntame tu viaje</a></div></header>
@@ -30,6 +37,6 @@ export default function Home(){return <main>
   <section className="destinations" id="destinos"><p className="eyebrow">MI ESPECIALIDAD</p><h2>Riviera Maya y destinos de playa — y a donde tú sueñes</h2><div className="placeGrid">{places.map(([t,d,img])=><article key={t}><img src={img} alt={t}/><h3>{t}</h3><p>{d}</p></article>)}</div></section>
   <section className="testimonials" id="testimonios"><p className="eyebrow">LO QUE DICEN MIS VIAJEROS</p><h2>Historias reales, experiencias inolvidables</h2><div className="reviewGrid">{reviews.map(([q,n,img])=><article key={n}><div className="quote">“</div><p>“{q}”</p><div className="stars">★★★★★</div><strong>— {n}</strong><img src={img} alt={`Cliente ${n}`}/></article>)}</div></section>
   <FAQAccordion/>
-  <footer><div><p className="eyebrow light">TU PRÓXIMA HISTORIA COMIENZA AQUÍ</p><h2>Cuéntame tu viaje<br/>y hagámoslo realidad.</h2><p>Estoy lista para ayudarte a vivir tu mejor experiencia.</p></div><div><a className="wa" href={WA}><MessageCircle/>Escríbeme por WhatsApp</a><small>Respuesta rápida y atención personalizada</small><p>hola@travelpartner.com · +52 998 392 1530</p></div></footer>
+  <footer><div><p className="eyebrow light">TU PRÓXIMA HISTORIA COMIENZA AQUÍ</p><h2>Cuéntame tu viaje<br/>y hagámoslo realidad.</h2><p>Estoy lista para ayudarte a vivir tu mejor experiencia.</p></div><div><a className="wa" href={WA}><MessageCircle/>Escríbeme por WhatsApp</a><small>Respuesta rápida y atención personalizada</small><p>psalazar@viajesbumeran.com · +52 998 392 1530</p><div className="social" aria-label="Redes sociales">{socials.map(([Icon,label,href])=><a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label}><Icon/></a>)}</div></div></footer>
   <a className="floating" href={WA} aria-label="Abrir WhatsApp"><MessageCircle/></a>
  </main>}
