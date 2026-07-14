@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Clock3, ShieldCheck, UserRound, Gem, Headphones, MessageCircle, MapPinned, Luggage, Palmtree, Search, BadgeAlert, WalletCards, CircleHelp, Menu, Timer, Facebook, Instagram, Youtube } from "lucide-react";
+import { Clock3, ShieldCheck, UserRound, Gem, Headphones, MessageCircle, MapPinned, Luggage, Palmtree, Search, BadgeAlert, WalletCards, CircleHelp, Menu, Timer } from "lucide-react";
 import FAQAccordion from "./components/FAQAccordion";
 
 export const metadata: Metadata = { title: "Paulina Salazar | Tu Travel Partner en México", description: "Soy Paulina, tu Travel Partner y compañera de viaje. Te acompaño a planear tu viaje a Riviera Maya, Cancún y más, sin estrés ni miedo a equivocarte." };
@@ -21,12 +21,15 @@ const reviews=[
  ["Nuestro viaje de luna de miel fue un sueño. Cada detalle pensado para nosotros. ¡Superó todas nuestras expectativas!","Carlos & Andrea","https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=160&q=80"],
  ["Me ahorró horas de investigación y dinero. Siempre estuvo disponible y nos acompañó durante todo el viaje.","Jorge R.","https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=80"]
 ];
-function TikTokIcon(){return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 3v10.5a4.5 4.5 0 1 1-4.5-4.5"/><path d="M15 3c.8 2.4 2.6 4 5 4.5"/></svg>;}
+function FacebookIcon(){return <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.8-.1-1.7-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3v2H7.3v3h2.8v8h3.4Z"/></svg>;}
+function TikTokIcon(){return <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15 3c.4 2.2 1.7 3.6 4 4v3c-1.5 0-2.8-.4-4-1.2v6.1a5.1 5.1 0 1 1-4.4-5V13a2.1 2.1 0 1 0 1.4 2V3h3Z"/></svg>;}
+function InstagramIcon(){return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>;}
+function YoutubeIcon(){return <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-2.1-.2-3.8-.5-4.7a2.7 2.7 0 0 0-1.9-1.9C18.1 5 12 5 12 5s-6.1 0-7.6.4a2.7 2.7 0 0 0-1.9 1.9C2.2 8.2 2 9.9 2 12s.2 3.8.5 4.7a2.7 2.7 0 0 0 1.9 1.9C5.9 19 12 19 12 19s6.1 0 7.6-.4a2.7 2.7 0 0 0 1.9-1.9c.3-.9.5-2.6.5-4.7Zm-12 3.5v-7l6 3.5-6 3.5Z"/></svg>;}
 const socials=[
-  [Facebook,"Facebook","https://www.facebook.com/share/1GjFtGYqvk/"],
+  [FacebookIcon,"Facebook","https://www.facebook.com/share/1GjFtGYqvk/"],
   [TikTokIcon,"TikTok","https://www.tiktok.com/@viajes_bumeran_casal?_r=1&_t=ZS-97tnwvvVyF8"],
-  [Instagram,"Instagram","https://www.instagram.com/viaja.pau?igsh=bWZzeGphM2JveHV0&utm_source=qr"],
-  [Youtube,"YouTube","https://youtube.com/@inspirateaviajar?si=x4N2enDjoUBr3QF_"]
+  [InstagramIcon,"Instagram","https://www.instagram.com/viaja.pau?igsh=bWZzeGphM2JveHV0&utm_source=qr"],
+  [YoutubeIcon,"YouTube","https://youtube.com/@inspirateaviajar?si=x4N2enDjoUBr3QF_"]
 ] as const;
 export default function Home(){return <main>
   <header className="hero" id="inicio"><nav><a className="brand" href="#inicio">TRAVEL<br/>PARTNER<span>PAULINA SALAZAR</span></a><div className="links"><a href="#inicio">Inicio</a><a href="#sobre-mi">Sobre mí</a><a href="#proceso">Servicios</a><a href="#destinos">Destinos</a><a href="#testimonios">Testimonios</a><a href="#faq">FAQ</a></div><a className="wa small" href={WA}><MessageCircle/>Hablemos por WhatsApp</a><Menu className="menu"/></nav>
